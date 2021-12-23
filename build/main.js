@@ -1,7 +1,7 @@
 "use strict";
-const inputFeeling = document.getElementById("input-feeling");
-const inputGoal = document.getElementById("input-goal");
-const inputGrateful = document.getElementById("input-grateful");
+let inputFeeling = document.getElementById("input-feeling");
+let inputGoal = document.getElementById("input-goal");
+let inputGrateful = document.getElementById("input-grateful");
 const refreshButton = document.querySelector(".refresh-button");
 function saveInputValue(event, inputName) {
     const input = event.target;
@@ -11,7 +11,6 @@ function saveInputValue(event, inputName) {
     }
 }
 function clearData() {
-    console.log("hello");
     localStorage.clear();
 }
 inputFeeling === null || inputFeeling === void 0 ? void 0 : inputFeeling.addEventListener("change", (e) => {
