@@ -1,0 +1,57 @@
+body, html {
+  height: 100%;
+  margin: 0;
+  font-family: -apple-system, 'Segoe UI', 'Roboto', 'Oxygen',
+  'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+  sans-serif;
+}
+
+main {
+    /* Full height */
+    background-image: url("img/cool-background.png");
+    height: 100%; 
+
+    /* Center and scale the image nicely */
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover; 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.journal-container {
+  display: flex;
+  min-width: 700px;
+  min-height:800px;
+  background-color: white;
+  border: 2px solid #0aa2e9;
+  border-radius: 10px;
+  margin: 0 auto;
+}
+
+.journal-menu {
+  width: 70px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  background-color: #0aa2e9;
+}
+
+.journal-menu button {
+  width: 100%;
+  height: 70px;
+  border-style: none;
+  background-color: transparent;
+  color: white;
+  cursor: pointer;
+}
+
+.header-container {
+  margin: 0 auto;
+}
+.journal-header {
+  text-align: center;
+  font-weight: 500;
+  text-decoration: underline #0aa2e9;
+}
