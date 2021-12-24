@@ -7,9 +7,21 @@ html {
 		Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol, Noto Color Emoji;
 }
 
+html {
+	font-size: 62.5%;
+}
+
+body {
+	font-size: 1.6rem;
+}
+
 textarea:focus,
 input:focus {
 	outline: none;
+}
+
+input {
+	border-style: none;
 }
 
 main {
@@ -26,6 +38,15 @@ main {
 	align-items: center;
 }
 
+button {
+	border-style: none;
+	background-color: transparent;
+	cursor: pointer;
+}
+
+li {
+	list-style-type: none;
+}
 .journal-container {
 	display: flex;
 	min-width: 700px;
@@ -47,10 +68,7 @@ main {
 .journal-menu button {
 	width: 100%;
 	height: 70px;
-	border-style: none;
-	background-color: transparent;
 	color: white;
-	cursor: pointer;
 }
 
 .home-container {
@@ -69,16 +87,15 @@ main {
 }
 
 .home-input span {
-	font-size: 20px;
+	font-size: 2rem;
 	font-weight: 500;
 }
 
 .home-input input {
 	margin-top: 10px;
 	height: 50px;
-	border-style: none;
 	border-bottom: 2px solid #8ed1f0;
-	font-size: 18px;
+	font-size: 1.8rem;
 }
 .journal-header {
 	text-align: center;
@@ -89,8 +106,5 @@ main {
 	text-align: center;
 }
 .refresh-button {
-	border-style: none;
 	color: #8ed1f0;
-	background-color: transparent;
-	cursor: pointer;
 }

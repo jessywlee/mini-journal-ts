@@ -1,0 +1,29 @@
+.tasks-container {
+	text-align: center;
+	margin: 0 auto;
+	width: 80%;
+}
+
+.add-button {
+	color: #8ed1f0;
+	margin-left: 1rem;
+}
+
+.tasks-header {
+	display: flex;
+	margin-top: 5rem;
+	justify-content: center;
+}
+
+.task-list-container {
+	width: 100%;
+}
+.task-item {
+	width: 100%;
+}
+
+.task-input {
+	width: 75%;
+	border-bottom: 2px solid #8ed1f0;
+	font-size: 1.8rem;
+}
