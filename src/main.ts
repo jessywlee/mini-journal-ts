@@ -1,6 +1,7 @@
-let inputFeeling = document.getElementById("input-feeling");
-let inputGoal = document.getElementById("input-goal");
-let inputGrateful = document.getElementById("input-grateful");
+const homeForm = document.getElementById("home-form") as HTMLFormElement;
+const inputFeeling = document.getElementById("input-feeling");
+const inputGoal = document.getElementById("input-goal");
+const inputGrateful = document.getElementById("input-grateful");
 const refreshButton = document.querySelector(".refresh-button");
 
 function saveInputValue(event: Event, inputName: string): void {
@@ -13,6 +14,7 @@ function saveInputValue(event: Event, inputName: string): void {
 
 function clearData(): void {
 	localStorage.clear();
+	homeForm?.reset();
 }
 
 inputFeeling?.addEventListener("change", (e) => {

@@ -59,6 +59,10 @@ main {
 	width: 75%;
 }
 
+#home-form {
+	display: contents;
+}
+
 .home-input {
 	display: flex;
 	flex-direction: column;
