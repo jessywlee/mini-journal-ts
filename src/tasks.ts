@@ -3,7 +3,7 @@ type Task = {
 	id: number;
 };
 
-const taskArray: Array<object> = [];
+const taskArray: Array<Task> = [];
 const taskList = document.querySelector('.task-list');
 const addTaskButton = document.querySelector('.add-button');
 
@@ -29,17 +29,31 @@ function addTask (e:Event): void {
 	taskDeleteIcon.className = 'far fa-trash-alt fa-lg';
 	taskInput.type = 'text';
 	taskInput.className = 'task-input';
+	taskInput.id = task.id.toString();
 	taskItem.className = 'task-item';
+	taskItem.classList.add(task.id.toString());
 
 	taskDeleteButton.appendChild(taskDeleteIcon);
 	taskItem.appendChild(taskCheckBox);
 	taskItem.appendChild(taskInput);
 	taskItem.appendChild(taskDeleteButton);
 	taskList?.appendChild(taskItem);
-
 }
 
-function writeTask() {
+function writeTask(e: Event): void {
+	const target = e.target as HTMLInputElement;
+	const taskValue = target.value;
+	const taskId = target.id;
 
+	taskArray.forEach((task) => {
+		if(task.id === Number(taskId)) {
+			task.task = taskValue;
+		}
+	})
+
+	localStorage.setItem('tasks', JSON.stringify(taskArray));
+	
 }
+
 addTaskButton?.addEventListener('click', (e)=> {addTask(e)});
+taskList?.addEventListener('change', (e) => {writeTask(e)});
