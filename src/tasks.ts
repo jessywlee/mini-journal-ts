@@ -3,9 +3,42 @@ type Task = {
 	id: number;
 };
 
-const taskArray: Array<Task> = [];
+const data = localStorage.getItem('tasks');
+let taskArray: Array<Task> = [];
+if(data) {
+	taskArray = JSON.parse(data)
+}
+
 const taskList = document.querySelector('.task-list');
 const addTaskButton = document.querySelector('.add-button');
+
+function loadTask (tasks: Array<Task>): void {
+	const taskCheckBox = document.createElement('input');
+	const taskDeleteButton = document.createElement('button');
+	const taskDeleteIcon = document.createElement('i');
+	const taskInput = document.createElement('input')
+	const taskItem = document.createElement('li');
+
+	taskArray.forEach(task => {
+		taskCheckBox.type = 'checkbox';
+		taskCheckBox.className = 'task-checkbox';
+		taskDeleteButton.className = 'task-delete-btn';
+		taskDeleteIcon.className = 'far fa-trash-alt fa-lg';
+		taskInput.type = 'text';
+		taskInput.className = 'task-input';
+		taskInput.id = task.id.toString();
+		taskInput.value = task.task;
+		taskItem.className = 'task-item';
+		taskItem.classList.add(task.id.toString());
+
+		taskDeleteButton.appendChild(taskDeleteIcon);
+		taskItem.appendChild(taskCheckBox);
+		taskItem.appendChild(taskInput);
+		taskItem.appendChild(taskDeleteButton);
+		taskList?.appendChild(taskItem);
+	})
+	
+}
 
 function addTask (e:Event): void {
 	e.preventDefault();
@@ -52,8 +85,7 @@ function writeTask(e: Event): void {
 	})
 
 	localStorage.setItem('tasks', JSON.stringify(taskArray));
-	
 }
-
+loadTask(taskArray);
 addTaskButton?.addEventListener('click', (e)=> {addTask(e)});
 taskList?.addEventListener('change', (e) => {writeTask(e)});
