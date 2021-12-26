@@ -18,8 +18,13 @@
 .task-list-container {
 	width: 100%;
 }
+
+.task-list {
+	padding: 0 !important;
+}
 .task-item {
 	width: 100%;
+	margin-bottom: 4rem;
 }
 
 .task-input {
