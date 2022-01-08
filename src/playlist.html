@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>My Mini Journal</title>
+		<link rel="stylesheet" href="main.css" />
+		<link rel="stylesheet" href="css/playlist.css" />
+		<link
+			rel="stylesheet"
+			href="https://use.fontawesome.com/releases/v5.2.0/css/all.css"
+		/>
+	</head>
+	<body>
+		<main>
+			<div class="journal-container">
+				<div class="journal-menu">
+					<div class="menu-home">
+						<button class="menu-button" onclick="location.href='../index.html'">
+							<i class="fas fa-home fa-lg"></i>
+						</button>
+					</div>
+					<div class="menu-tasks">
+						<button class="menu-button" onclick="location.href='./tasks.html'">
+							<i class="fas fa-tasks fa-lg"></i>
+						</button>
+					</div>
+					<div class="menu-playlist">
+						<button class="menu-button" onclick="location.href='./playlist.html'">
+							<i class="fab fa-youtube fa-lg"></i>
+						</button>
+					</div>
+					<div class="menu-review">
+						<button class="menu-button">
+							<i class="fas fa-edit fa-lg"></i>
+						</button>
+					</div>
+				</div>
+        <div class="playlist-container">
+          <div class="home-header">
+						<h1 class="journal-header">My Mini Journal</h1>
+					</div>
+          <div class="playlist-form">
+            <div class="playlist-header">
+							<h3 style="text-align: center">Today's Playlist</h3>
+						</div>
+            <div class="add-link">
+              <span>Add Link from YouTube:</span>
+              <input type="text" class="link-address">
+              <button class="add-button">
+                <i class="fas fa-plus-circle fa-2x"></i>
+              </button>
+            </div>
+            <ul class="playlist-items">
+              <li draggable="true" class="playlist-item">
+                <div class="playlist-preview">
+                  <iframe src="https://youtube.com/embed/w3AFRLbljW4" width="250" height="200" frameborder="0"></iframe>
+                </div>
+                  <textarea class="playlist-desc" placeholder="Enter notes here..." cols="30" rows="10"></textarea>
+              </li>
+              <li draggable="true" class="playlist-item">
+                <div class="playlist-preview">
+                  <iframe src="https://youtube.com/embed/w3AFRLbljW4" width="250" height="200" frameborder="0"></iframe>
+                </div>
+                  <textarea class="playlist-desc" placeholder="Enter notes here..." cols="30" rows="10"></textarea>
+              </li>
+            </ul>
+          </div>
+        </div>
+
+			</div>
+		</main>
+		<script src="../build/playlist.js"></script>
+	</body>
+</html>
