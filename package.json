@@ -1,0 +1,22 @@
+{
+  "name": "mini-journal-ts",
+  "version": "1.0.0",
+  "description": "Mini journal app made with TypeScript",
+  "main": "main.js",
+  "private": true,
+  "dependencies": {},
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jessywlee/mini-journal-ts.git"
+  },
+  "author": "Jessica Lee",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/jessywlee/mini-journal-ts/issues"
+  },
+  "homepage": "https://github.com/jessywlee/mini-journal-ts#readme"
+}

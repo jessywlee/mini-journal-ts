@@ -53,15 +53,19 @@
               </button>
             </div>
             <ul class="playlist-items">
-              <li draggable="true" class="playlist-item">
-                <div class="playlist-preview">
+              <li draggable="true" class="playlist-item draggable">
                   <iframe src="https://youtube.com/embed/w3AFRLbljW4" width="250" height="200" frameborder="0"></iframe>
+                  <textarea class="playlist-desc" placeholder="Enter notes here..." cols="30" rows="10"></textarea>
+              </li>
+              <li draggable="true" class="playlist-item draggable">
+                <div class="playlist-preview">
+                  <iframe src="https://www.youtube.com/embed/25Wn6utR7tM" width="250" height="200" frameborder="0"></iframe>
                 </div>
                   <textarea class="playlist-desc" placeholder="Enter notes here..." cols="30" rows="10"></textarea>
               </li>
-              <li draggable="true" class="playlist-item">
+              <li draggable="true" class="playlist-item draggable">
                 <div class="playlist-preview">
-                  <iframe src="https://youtube.com/embed/w3AFRLbljW4" width="250" height="200" frameborder="0"></iframe>
+                  <iframe src="https://www.youtube.com/embed/jfYWwQrtzzY" width="250" height="200" frameborder="0"></iframe>
                 </div>
                   <textarea class="playlist-desc" placeholder="Enter notes here..." cols="30" rows="10"></textarea>
               </li>
@@ -71,6 +75,6 @@
 
 			</div>
 		</main>
-		<script src="../build/playlist.js"></script>
+		<script src="../build/playlist.js" type="module"></script>
 	</body>
 </html>
