@@ -3,20 +3,24 @@ type Task = {
 	id: number;
 };
 
-const data = localStorage.getItem("tasks");
 let taskArray: Array<Task> = [];
-if (data) {
-	taskArray = JSON.parse(data);
+const taskData = localStorage.getItem("tasks");
+if (taskData) {
+	taskArray = JSON.parse(taskData);
 }
 
 const taskList = document.querySelector(".task-list");
 const addTaskButton = document.querySelector(".add-button");
 
 function loadTask(tasks: Array<Task>): void {
+	console.log('load')
 	tasks.forEach((task) => {
 		const taskCheckBox = document.createElement("input");
 		const taskDeleteButton = document.createElement("button");
 		const taskDeleteIcon = document.createElement("i");
+		taskDeleteButton.addEventListener("click", (e) => {
+			deleteTask(e);
+		});
 		const taskInput = document.createElement("input");
 		const taskItem = document.createElement("li");
 
@@ -37,14 +41,11 @@ function loadTask(tasks: Array<Task>): void {
 		taskItem.appendChild(taskInput);
 		taskItem.appendChild(taskDeleteButton);
 		taskList?.appendChild(taskItem);
-
-		taskDeleteIcon.addEventListener("click", (e) => {
-			deleteTask(e);
-		});
 	});
 }
 
 function addTask(e: Event): void {
+	console.log('add')
 	e.preventDefault();
 	const task: Task = {
 		task: "",
@@ -57,6 +58,9 @@ function addTask(e: Event): void {
 	const taskCheckBox = document.createElement("input");
 	const taskDeleteButton = document.createElement("button");
 	const taskDeleteIcon = document.createElement("i");
+	taskDeleteButton.addEventListener("click", (e) => {
+		deleteTask(e);
+	});
 	const taskInput = document.createElement("input");
 	const taskItem = document.createElement("li");
 
@@ -92,17 +96,17 @@ function writeTask(e: Event): void {
 	localStorage.setItem("tasks", JSON.stringify(taskArray));
 }
 
-async function deleteTask(e: Event): Promise<void> {
-	// e.preventDefault();
+function deleteTask(e: Event): void {
 	const target = e.target as HTMLButtonElement;
 	const taskId = target.accessKey;
 
-	await taskArray.forEach((task, index) => {
+	taskArray.forEach((task, index) => {
 		if (task.id === Number(taskId)) {
 			taskArray.splice(index, 1);
 			localStorage.setItem("tasks", JSON.stringify(taskArray));
 		}
 	});
+	location.reload();
 }
 
 loadTask(taskArray);

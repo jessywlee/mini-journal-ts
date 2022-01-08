@@ -11,9 +11,12 @@ function saveInputValue(event, inputName) {
         localStorage.setItem(inputName, value);
     }
 }
-function clearData() {
+function clearData(e) {
+    e.preventDefault();
     localStorage.clear();
-    homeForm === null || homeForm === void 0 ? void 0 : homeForm.reset();
+    inputFeeling.value = "";
+    inputGoal.value = "";
+    inputGrateful.value = "";
 }
 inputFeeling === null || inputFeeling === void 0 ? void 0 : inputFeeling.addEventListener("change", (e) => {
     saveInputValue(e, "todayFeeling");
@@ -24,5 +27,5 @@ inputGoal === null || inputGoal === void 0 ? void 0 : inputGoal.addEventListener
 inputGrateful === null || inputGrateful === void 0 ? void 0 : inputGrateful.addEventListener("change", (e) => {
     saveInputValue(e, "todayGrateful");
 });
-refreshButton === null || refreshButton === void 0 ? void 0 : refreshButton.addEventListener("click", clearData);
+refreshButton === null || refreshButton === void 0 ? void 0 : refreshButton.addEventListener("click", (e) => { clearData(e); });
 //# sourceMappingURL=main.js.map

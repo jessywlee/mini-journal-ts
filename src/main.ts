@@ -1,7 +1,7 @@
-const homeForm = document.getElementById("home-form") as HTMLFormElement;
-const inputFeeling = document.getElementById("input-feeling");
-const inputGoal = document.getElementById("input-goal");
-const inputGrateful = document.getElementById("input-grateful");
+const homeForm = document.getElementById("home-form") as HTMLElement;
+const inputFeeling = document.getElementById("input-feeling") as HTMLInputElement;
+const inputGoal = document.getElementById("input-goal") as HTMLInputElement;
+const inputGrateful = document.getElementById("input-grateful") as HTMLInputElement;
 const refreshButton = document.querySelector(".refresh-button");
 
 function saveInputValue(event: Event, inputName: string): void {
@@ -12,9 +12,12 @@ function saveInputValue(event: Event, inputName: string): void {
 	}
 }
 
-function clearData(): void {
+function clearData(e: Event): void {
+	e.preventDefault();
 	localStorage.clear();
-	homeForm?.reset();
+	inputFeeling.value = "";
+	inputGoal.value = "";
+	inputGrateful.value = "";
 }
 
 inputFeeling?.addEventListener("change", (e) => {
@@ -29,4 +32,4 @@ inputGrateful?.addEventListener("change", (e) => {
 	saveInputValue(e, "todayGrateful");
 });
 
-refreshButton?.addEventListener("click", clearData);
+refreshButton?.addEventListener("click", (e) => { clearData(e) });
