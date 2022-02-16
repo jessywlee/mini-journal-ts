@@ -11,6 +11,7 @@
 			rel="stylesheet"
 			href="https://use.fontawesome.com/releases/v5.2.0/css/all.css"
 		/>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Sortable/1.14.0/Sortable.min.js"></script>
 	</head>
 	<body>
 		<main>
@@ -46,27 +47,23 @@
 							<h3 style="text-align: center">Today's Playlist</h3>
 						</div>
             <div class="add-link">
-              <span>Add Link from YouTube:</span>
+              <span>Add Embed Link from YouTube:</span>
               <input type="text" class="link-address">
-              <button class="add-button">
+              <button class="link-add-button">
                 <i class="fas fa-plus-circle fa-2x"></i>
               </button>
             </div>
-            <ul class="playlist-items">
+            <ul id="playlist-items">
               <li draggable="true" class="playlist-item draggable">
                   <iframe src="https://youtube.com/embed/w3AFRLbljW4" width="250" height="200" frameborder="0"></iframe>
                   <textarea class="playlist-desc" placeholder="Enter notes here..." cols="30" rows="10"></textarea>
               </li>
-              <li draggable="true" class="playlist-item draggable">
-                <div class="playlist-preview">
+              <li draggable="true" class="playlist-item draggable"> 
                   <iframe src="https://www.youtube.com/embed/25Wn6utR7tM" width="250" height="200" frameborder="0"></iframe>
-                </div>
                   <textarea class="playlist-desc" placeholder="Enter notes here..." cols="30" rows="10"></textarea>
               </li>
               <li draggable="true" class="playlist-item draggable">
-                <div class="playlist-preview">
-                  <iframe src="https://www.youtube.com/embed/jfYWwQrtzzY" width="250" height="200" frameborder="0"></iframe>
-                </div>
+                  <iframe src="https://www.youtube.com/embed/jfYWwQrtzzY" width="250" height="200" frameborder="0"></iframe>            
                   <textarea class="playlist-desc" placeholder="Enter notes here..." cols="30" rows="10"></textarea>
               </li>
             </ul>
@@ -75,6 +72,7 @@
 
 			</div>
 		</main>
+    <script> var exports = {}; </script>
 		<script src="../build/playlist.js" type="module"></script>
 	</body>
 </html>

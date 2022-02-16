@@ -27,7 +27,7 @@
   margin-left: 2rem;
   font-size: 1.6rem;
 }
-.playlist-items {
+#playlist-items {
   margin-top: 2rem;
   height: 560px;
   overflow: scroll;
@@ -39,6 +39,7 @@
   justify-content: space-between;
   margin-top: 1rem;
   border: 1px solid #8ed1f0;
+  cursor: pointer;
 }
 
 .playlist-preview {

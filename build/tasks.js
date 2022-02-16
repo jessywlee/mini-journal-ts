@@ -44,7 +44,6 @@ function addTask(e) {
     };
     taskArray.push(task);
     localStorage.setItem("tasks", JSON.stringify(taskArray));
-    //add DOM element
     const taskCheckBox = document.createElement("input");
     const taskDeleteButton = document.createElement("button");
     const taskDeleteIcon = document.createElement("i");
