@@ -1,11 +1,29 @@
-import { PageComponent } from './components/page.js';
+import { PageComponent } from './components/page/page.js';
 
 class App {
-	private readonly page: PageComponent;
+	private page: PageComponent;
 	constructor(appRoot: HTMLElement) {
-		this.page = new PageComponent();
+		this.page = new PageComponent('menu-home');
 		this.page.attachTo(appRoot);
+
+		const homeButton = document.querySelector(".button-home");
+		homeButton?.addEventListener('click', () => {
+			this.page.changeMenu('home');
+		})
+
+		const tasksButton = document.querySelector(".button-tasks");
+		tasksButton?.addEventListener("click", () => {
+			this.page.changeMenu('tasks');
+		});
+
+		const playlistButton = document.querySelector(".button-playlist");
+		playlistButton?.addEventListener("click", () => {
+			this.page.changeMenu('playlist');
+		});
 	}
+
+	
+
 }
 
 new App(document.querySelector('.main-document') as HTMLElement);
