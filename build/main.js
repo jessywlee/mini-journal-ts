@@ -1,5 +1,5 @@
 "use strict";
-const homeForm = document.getElementById("home-form");
+const homeForm = document.querySelector(".page-container");
 const inputFeeling = document.getElementById("input-feeling");
 const inputGoal = document.getElementById("input-goal");
 const inputGrateful = document.getElementById("input-grateful");

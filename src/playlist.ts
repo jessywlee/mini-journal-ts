@@ -1,12 +1,14 @@
-import Sortable from 'sortablejs';
+// import Sortable from "sortablejs";
 
-const container = document.getElementById('playlist-items') as HTMLUListElement;
+const draggables = document.querySelectorAll('.draggable');
+const container = document.querySelector('.playlist-items') as HTMLUListElement;
 const youtubeLink = document.querySelector('.link-address') as HTMLInputElement;
 const addLinkButton = document.querySelector('.link-add-button');
 
-Sortable.create(container, {
-  animation: 350
-});
+
+// Sortable.create(container, {
+//     animation: 350
+//   })
 
 
 function addPlaylist() :void {
@@ -17,17 +19,17 @@ function addPlaylist() :void {
 
 addLinkButton?.addEventListener('click', () => addPlaylist())
 
-// draggables.forEach(draggable => {
-//   draggable.addEventListener('dragstart', () => {
-//     draggable.classList.add('dragging');
-//   })
-// })
+draggables.forEach(draggable => {
+  draggable.addEventListener('dragstart', () => {
+    draggable.classList.add('dragging');
+  })
+})
 
-// draggables.forEach(draggable => {
-//   draggable.addEventListener('dragend', () => {
-//     draggable.classList.remove('dragging');
-//   })
-// })
+draggables.forEach(draggable => {
+  draggable.addEventListener('dragend', () => {
+    draggable.classList.remove('dragging');
+  })
+})
 
 // container?.addEventListener('dragover', (e) => {
 //   e.preventDefault();

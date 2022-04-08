@@ -9,7 +9,7 @@
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css">
 </head>
 <body>
-  <main>
+  <div id="app">
     <div class="journal-container">
       <div class="journal-menu">
         <div class="menu-home">
@@ -27,23 +27,23 @@
             <i class="fab fa-youtube fa-lg"></i>
           </button>
         </div>
-        <div class="menu-review">
+        <!-- <div class="menu-review">
           <button class="menu-button">
             <i class="fas fa-edit fa-lg"></i>
           </button>
-        </div>
+        </div> -->
       </div>
       <div class="home-container">
-        <div class="home-header">
+        <header class="home-header">
           <h1 class="journal-header">
             My Mini Journal
           </h1>
           <button class="refresh-button">
             <i class="far fa-trash-alt fa-lg"></i>
           </button>
-        </div>
-        <div id="home-form">
-          <h3 style="text-align: center;">Home</h3>
+        </header>
+        <main class="main-document">
+          <!-- <h3 style="text-align: center;">Home</h3>
           <div class="home-input">
             <span>Today I am feeling...</span>
             <input id="input-feeling" type="text">
@@ -55,11 +55,12 @@
           <div class="home-input">
             <span>Today I am grateful for...</span>
             <input id="input-grateful"type="text">
-          </div>
-        </div>
+          </div> -->
+        </main>
+        <footer class="footer"> <p>Copyright by Jessica Lee. All rights reserved.</p></footer>
       </div>
     </div>
-  </main>
-  <script src="./build/main.js"></script>
+  </div>
+  <script type="module" src="./build/app.js"></script>
 </body>
 </html>

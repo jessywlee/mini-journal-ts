@@ -29,7 +29,7 @@ textarea {
 		Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol, Noto Color Emoji;
 }
 
-main {
+#app {
 	/* Full height */
 	background-image: url("img/cool-background.png");
 	height: 100%;
@@ -82,7 +82,7 @@ li {
 	width: 75%;
 }
 
-#home-form {
+.main-document {
 	display: contents;
 }
 
@@ -112,4 +112,10 @@ li {
 }
 .refresh-button {
 	color: #8ed1f0;
+}
+
+.footer {
+	align-self: flex-end;
+	text-align: center;
+	font-size: 11px;
 }

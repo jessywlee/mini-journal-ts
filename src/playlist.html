@@ -10,8 +10,8 @@
 		<link
 			rel="stylesheet"
 			href="https://use.fontawesome.com/releases/v5.2.0/css/all.css"
-		/>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/Sortable/1.14.0/Sortable.min.js"></script>
+		/>	
+	<script src="https://raw.githack.com/SortableJS/Sortable/master/Sortable.js"></script>
 	</head>
 	<body>
 		<main>
@@ -32,11 +32,11 @@
 							<i class="fab fa-youtube fa-lg"></i>
 						</button>
 					</div>
-					<div class="menu-review">
+					<!-- <div class="menu-review">
 						<button class="menu-button">
 							<i class="fas fa-edit fa-lg"></i>
 						</button>
-					</div>
+					</div> -->
 				</div>
         <div class="playlist-container">
           <div class="home-header">
@@ -72,7 +72,11 @@
 
 			</div>
 		</main>
-    <script> var exports = {}; </script>
+		<!-- <script src="../node_modules/sortablejs/Sortable.js" type="module"></script> -->
+		<script>
+			const container = document.getElementById("playlist-items")
+			Sortable.create(container)
+		</script>
 		<script src="../build/playlist.js" type="module"></script>
 	</body>
 </html>
