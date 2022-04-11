@@ -21,10 +21,16 @@ class App {
 		playlistButton?.addEventListener("click", () => {
 			this.page.changeMenu('playlist');
 		});
+
+		const deleteAllButton = document.querySelector('.delete-button');
+		deleteAllButton?.addEventListener('click', () => {
+			const allInputs = document.querySelectorAll('.inputs');
+			const allInputsArray = [...allInputs] as HTMLInputElement[];
+			allInputsArray.forEach((input) => {
+				input.value = "";
+			})
+		})
 	}
-
-	
-
 }
 
 new App(document.querySelector('.main-document') as HTMLElement);

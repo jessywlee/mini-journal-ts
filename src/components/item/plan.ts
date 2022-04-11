@@ -7,15 +7,15 @@ export class PlanComponent {
     <h3 style="text-align: center;">Home</h3>
     <div class="home-input">
       <span>Today I am feeling...</span>
-      <input id="input-feeling" type="text">
+      <input id="input-feeling" class="inputs" type="text">
     </div>
     <div class="home-input">
       <span>Today my goal is...</span>
-      <input id="input-goal" type="text">
+      <input id="input-goal" class="inputs" type="text">
     </div>
     <div class="home-input">
       <span>Today I am grateful for...</span>
-      <input id="input-grateful"type="text">
+      <input id="input-grateful" class="inputs"type="text">
     </div>`;
 	}
 	savePlanOnLocalStorage() {
