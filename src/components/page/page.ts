@@ -1,7 +1,9 @@
+import { PlanComponent } from '../item/plan.js';
+type PageMenu = 'home' | 'tasks' | 'playlist';
 export class PageComponent {
-  private element: HTMLUListElement;
+  private element: HTMLDivElement;
   constructor(pageMenu: string) {
-    this.element = document.createElement('ul');
+    this.element = document.createElement('div');
     this.element.setAttribute('class', pageMenu);
     this.element.textContent = `${pageMenu}`;
   }
@@ -10,7 +12,12 @@ export class PageComponent {
     parent.insertAdjacentElement(position, this.element);
   }
 
-  changeMenu(pageMenu: string) {
+  changeMenu(pageMenu: PageMenu) {
     this.element.textContent = `${pageMenu}`;
+    if (pageMenu == 'home') {
+      const plan = new PlanComponent();
+      plan.attachTo(this.element, 'afterbegin');
+      plan.savePlanOnLocalStorage();
+    }
   } 
 }

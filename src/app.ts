@@ -5,6 +5,7 @@ class App {
 	constructor(appRoot: HTMLElement) {
 		this.page = new PageComponent('menu-home');
 		this.page.attachTo(appRoot);
+		this.page.changeMenu("home");
 
 		const homeButton = document.querySelector(".button-home");
 		homeButton?.addEventListener('click', () => {
