@@ -1,10 +1,8 @@
 export class TaskComponent {
 	private element: HTMLElement;
 	constructor() {
-		//task component말고 task 추가 component가 따로 필요해보임
-		//page: task 추가, 헤더 컴포 -> task component
 		this.element = document.createElement("li");
-		this.element.className = "tasks-item";
+		this.element.className = "task-item";
 		this.element.innerHTML = `
 			<input class="task-checkbox" type="checkbox" />
 			<input class="task-input" type="text" />
