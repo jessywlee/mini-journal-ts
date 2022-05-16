@@ -3,6 +3,11 @@ import { PlanComponent } from '../item/plan.js';
 import { AddItemComponent } from '../action/add-item.js';
 type PageMenu = 'home' | 'tasks' | 'playlist';
 export class PageComponent {
+  // todo
+  // playlist page component to add
+  // playlist page - import url & add video
+  // playlist page - video drag drop order 
+  // task page - delete
 	private element: HTMLDivElement;
 	constructor() {
 		this.element = document.createElement("div");
