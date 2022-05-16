@@ -41,6 +41,9 @@ export class PlanComponent {
 		}
 	}
 	attachTo(parent: HTMLElement, position: InsertPosition = "afterbegin") {
+		const previousMenu = parent.childNodes[0];
+		previousMenu?.remove();
+		
 		parent.insertAdjacentElement(position, this.element);
 	}
 }
