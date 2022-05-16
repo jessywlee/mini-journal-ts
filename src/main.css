@@ -77,7 +77,9 @@ li {
 }
 
 .home-container {
-	display: grid;
+	display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 	margin: 0 auto;
 	width: 75%;
 }
@@ -85,7 +87,9 @@ li {
 .main-document {
 	display: contents;
 }
-
+.page-container {
+	height: 80%;
+}
 .home-input-container {
 	height: 90%;
 	display: flex;
