@@ -4,7 +4,6 @@ import { AddItemComponent } from '../action/add-item.js';
 type PageMenu = 'home' | 'tasks' | 'playlist';
 export class PageComponent {
   // todo
-  // playlist page component to add
   // playlist page - import url & add video
   // playlist page - video drag drop order 
   // task page - delete
@@ -24,10 +23,13 @@ export class PageComponent {
 			plan.attachTo(this.element, "afterbegin");
 			plan.savePlanOnLocalStorage();
     } else if (pageMenu == "tasks") {
-      const addTask = new AddItemComponent();
+      const addTask = new AddItemComponent('Tasks');
       addTask.attachTo(this.element, 'beforeend')
       const addTaskButton = document.querySelector('.add-task-button');
       addTaskButton?.addEventListener('click', () => { addTask.addTaskItem() });
+    } else if (pageMenu == 'playlist') {
+      const addTask = new AddItemComponent("Playlist");
+			addTask.attachTo(this.element, "beforeend");
 		}
 	}
 }
