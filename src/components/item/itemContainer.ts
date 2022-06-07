@@ -1,5 +1,5 @@
-import { TaskComponent } from "../item/task.js";
-export class AddItemComponent {
+import { TaskComponent } from "./task.js";
+export class ItemContainerComponent {
 	private element: HTMLElement;
 	constructor(title: 'Tasks' | 'Playlist') {
 		this.element = document.createElement("div");
@@ -15,10 +15,15 @@ export class AddItemComponent {
     `;
 	}
 
-	addTaskItem() {
-    const task = new TaskComponent();
-    const taskList = document.querySelector('.task-list') as HTMLUListElement;
-		task.attachTo(taskList);
+	addItemContainer(item: 'Tasks'| 'Playlist') {
+		if (item === "Tasks") {
+			const task = new TaskComponent();
+			const taskList = document.querySelector(".task-list") as HTMLUListElement;
+			task.attachTo(taskList);
+			taskList.addEventListener("change", (e) => {
+				task.saveInputValue(e);
+			}); //ulListElement에 이벤트 등록
+		}
 	}
 
 	attachTo(parent: HTMLElement, position: InsertPosition = "afterbegin") {

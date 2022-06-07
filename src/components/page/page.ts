@@ -1,12 +1,11 @@
 import { PlanComponent } from '../item/plan.js';
-// import { TaskComponent } from '../item/task.js';
-import { AddItemComponent } from '../action/add-item.js';
+import { ItemContainerComponent } from "../item/itemContainer.js";
 type PageMenu = 'home' | 'tasks' | 'playlist';
 export class PageComponent {
   // todo
   // playlist page - import url & add video
   // playlist page - video drag drop order 
-  // task page - delete
+  
 	private element: HTMLDivElement;
 	constructor() {
 		this.element = document.createElement("div");
@@ -23,12 +22,12 @@ export class PageComponent {
 			plan.attachTo(this.element, "afterbegin");
 			plan.savePlanOnLocalStorage();
     } else if (pageMenu == "tasks") {
-      const addTask = new AddItemComponent('Tasks');
+      const addTask = new ItemContainerComponent('Tasks');
       addTask.attachTo(this.element, 'beforeend')
-      const addTaskButton = document.querySelector('.add-task-button');
-      addTaskButton?.addEventListener('click', () => { addTask.addTaskItem() });
+			const addTaskButton = document.querySelector('.add-task-button');
+			addTaskButton?.addEventListener('click', () => { addTask.addItemContainer('Tasks') });
     } else if (pageMenu == 'playlist') {
-      const addTask = new AddItemComponent("Playlist");
+      const addTask = new ItemContainerComponent("Playlist");
 			addTask.attachTo(this.element, "beforeend");
 		}
 	}
