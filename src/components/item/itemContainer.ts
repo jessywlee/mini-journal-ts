@@ -3,22 +3,22 @@ export class ItemContainerComponent {
 	private element: HTMLElement;
 	constructor(title: 'Tasks' | 'Playlist') {
 		this.element = document.createElement("div");
-		this.element.id = "tasks-form";
+		this.element.id = "item-form";
 		this.element.innerHTML = `
-      <div class="tasks-header">
+      <div class="item-header">
         <h3 style="text-align: center">${title}</h3>
-        <button class="add-task-button">
+        <button class="add-item-button">
           <i class="fas fa-plus-circle fa-2x"></i>
         </button>
       </div>
-      <ul class="task-list"></ul>
+      <ul class="item-list"></ul>
     `;
 	}
 
 	addItemContainer(item: 'Tasks'| 'Playlist') {
 		if (item === "Tasks") {
 			const task = new TaskComponent();
-			const taskList = document.querySelector(".task-list") as HTMLUListElement;
+			const taskList = document.querySelector(".item-list") as HTMLUListElement;
 			task.attachTo(taskList);
 			taskList.addEventListener("change", (e) => {
 				task.saveInputValue(e);

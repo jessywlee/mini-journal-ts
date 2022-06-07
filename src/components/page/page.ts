@@ -24,7 +24,7 @@ export class PageComponent {
     } else if (pageMenu == "tasks") {
       const addTask = new ItemContainerComponent('Tasks');
       addTask.attachTo(this.element, 'beforeend')
-			const addTaskButton = document.querySelector('.add-task-button');
+			const addTaskButton = document.querySelector('.add-item-button');
 			addTaskButton?.addEventListener('click', () => { addTask.addItemContainer('Tasks') });
     } else if (pageMenu == 'playlist') {
       const addTask = new ItemContainerComponent("Playlist");

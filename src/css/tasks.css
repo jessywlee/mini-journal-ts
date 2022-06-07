@@ -4,25 +4,25 @@
 	width: 80%;
 }
 
-.add-task-button {
+.add-item-button {
 	color: #8ed1f0;
 	margin-left: 1rem;
 }
 
-.tasks-header {
+.item-header {
 	display: flex;
 	margin-top: 5rem;
 	justify-content: center;
 }
 
-.task-list-container {
+.item-list-container {
 	width: 100%;
 }
 
-.task-list {
+.item-list {
 	padding: 0 !important;
 }
-.tasks-item {
+.task-item {
 	width: 100%;
 	margin-bottom: 4rem;
 }

@@ -126,28 +126,28 @@ li {
 
 /* task-menu */
 
-.tasks-container {
+/* .tasks-container {
 	text-align: center;
 	margin: 0 auto;
 	width: 80%;
-}
+} */
 
-.add-task-button {
+.add-item-button {
 	color: #8ed1f0;
 	margin-left: 1rem;
 }
 
-.tasks-header {
+.item-header {
 	display: flex;
 	margin-top: 5rem;
 	justify-content: center;
 }
 
-.task-list-container {
+.iten-list-container {
 	width: 100%;
 }
 
-.task-list {
+.item-list {
 	padding: 0 !important;
 }
 .task-item {
